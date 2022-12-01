@@ -85,7 +85,7 @@ backers_df.drop(['name'], axis=1)
 # Reorder the columns
 backers_df = backers_df[['backer_id', 'cf_id', 'first_name', 'last_name', 'email']]
 backers_df
-``
+```
 
 ![This is an image](resources/backers_df_name_dropped.png)
 
