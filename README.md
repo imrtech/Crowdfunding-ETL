@@ -7,7 +7,7 @@ The purpose of this project is to organize, clean and group campaign data using 
 ## Analysis
 We created an ERD to analyze the relationships between the different sets of information. We included a backers dataset and added it to our schema.
 
-![This is an image](/crowdfunding_db_relationships.png)
+![This is an image](/resources/crowdfunding_db_relationships.png)
 
 ## Deliverable 1: Extract
 
@@ -19,7 +19,7 @@ csv_file = "backer_info.csv"
 backer_info_df = pd.read_csv(csv_file)
 backer_info_df.head()
 ```
-![This is an image](/backer_info_image.png)
+![This is an image](/resources/backer_info_image.png)
 
 ```
 # Iterate through the backers DataFrame and convert each row to a dictionary.
@@ -46,7 +46,7 @@ A backers_df DataFrame with columns 'backer_id', 'cf_id', 'name', and 'email' wa
 backers_df = pd.DataFrame(dict_values, columns=['backer_id', 'cf_id', 'name', 'email'])
 backers_df
 ```
-![This is an image](/backers_df_image.png)
+![This is an image](/resources/backers_df_image.png)
 
 ```
 # Export the DataFrame as a CSV file using encoding='utf8'.
@@ -73,7 +73,7 @@ Next we split the first name and last name columns.
 backers_df[["first_name","last_name"]] = backers_df["name"].str.split(' ', n=1, expand=True)
 backers_df
 ```
-![This is an image](/backers_df_split.png)
+![This is an image](/resources/backers_df_split.png)
 
 
 Now that we have the first name and last name columns, we no longer need the name column.
@@ -86,10 +86,10 @@ backers_df = backers_df[['backer_id', 'cf_id', 'first_name', 'last_name', 'email
 backers_df
 ``
 
-![This is an image](/backers_df_name_dropped.png)
+![This is an image](/resources/backers_df_name_dropped.png)
 
 ```
-# Export the DataFrame as a CSV file using encoding='utf8'.
+Export the DataFrame as a CSV file using encoding='utf8'.
 backers_df.to_csv('backers.csv', encoding='utf8', index=False)
 ```
 
