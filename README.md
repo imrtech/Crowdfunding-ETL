@@ -46,6 +46,7 @@ A backers_df DataFrame with columns 'backer_id', 'cf_id', 'name', and 'email' wa
 backers_df = pd.DataFrame(dict_values, columns=['backer_id', 'cf_id', 'name', 'email'])
 backers_df
 ```
+
 ![This is an image](resources/backers_df_image.png)
 
 ```
